@@ -1,0 +1,125 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease,
+    box-shadow 140ms ease,
+    transform 140ms ease;
+}
+
+.button:focus-visible {
+  outline: 3px solid rgb(37 99 235 / 24%);
+  outline-offset: 2px;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.button--sm {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.button--md {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.button--lg {
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+.button--primary {
+  color: #fff;
+  background: #2563eb;
+}
+
+.button--primary:hover:not(:disabled) {
+  background: #1d4ed8;
+  box-shadow: 0 3px 8px rgb(29 78 216 / 18%);
+}
+
+.button--secondary {
+  color: #344054;
+  background: #fff;
+  border-color: #d0d5dd;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #98a2b3;
+}
+
+.button--danger {
+  color: #fff;
+  background: #bd3c3c;
+}
+
+.button--danger:hover:not(:disabled) {
+  background: #9e2d2d;
+  box-shadow: 0 3px 8px rgb(158 45 45 / 18%);
+}
+
+.button--ghost {
+  color: #1d4ed8;
+  background: transparent;
+}
+
+.button--ghost:hover:not(:disabled) {
+  color: #1e40af;
+  background: #eff6ff;
+}
+
+.button__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button__spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: button-spin 650ms linear infinite;
+}
+
+.button--lg .button__spinner {
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .button__spinner {
+    animation-duration: 0.01ms;
+    transition-duration: 0.01ms;
+  }
+}

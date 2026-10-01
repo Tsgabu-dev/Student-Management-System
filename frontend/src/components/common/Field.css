@@ -1,0 +1,115 @@
+.form-field {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-field__label {
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.form-field__required {
+  margin-left: 3px;
+  color: #b42318;
+}
+
+.form-field__hint,
+.form-field__error {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.form-field__hint {
+  color: #667085;
+}
+
+.form-field__error {
+  color: #b42318;
+}
+
+.field-control {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  background: #fff;
+  color: #101828;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.field-control:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 14%);
+}
+
+.field-control--error,
+.field-control--error:focus-within {
+  border-color: #d92d20;
+}
+
+.field-control--error:focus-within {
+  box-shadow: 0 0 0 3px rgb(217 45 32 / 12%);
+}
+
+.field-control--disabled {
+  background: #f2f4f7;
+  color: #667085;
+  cursor: not-allowed;
+}
+
+.field-control__input,
+.field-control__select {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.field-control__input::placeholder {
+  color: #98a2b3;
+  opacity: 1;
+}
+
+.field-control__select {
+  min-height: 38px;
+  cursor: pointer;
+}
+
+.field-control--disabled .field-control__select {
+  cursor: not-allowed;
+}
+
+.field-control__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: #667085;
+}
+
+.field-control__icon > svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-control {
+    transition-duration: 0.01ms;
+  }
+}
