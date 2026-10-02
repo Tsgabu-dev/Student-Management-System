@@ -1,0 +1,226 @@
+.sidebar-shell {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 248px;
+  height: 100svh;
+  flex-direction: column;
+  padding: 22px 14px 14px;
+  box-sizing: border-box;
+  border-right: 1px solid #e4e7ec;
+  background: #fff;
+}
+
+.sidebar__brand-row {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.sidebar__brand {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  color: #101828;
+  text-decoration: none;
+}
+
+.sidebar__brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  background: #174d42;
+  color: #fff;
+}
+
+.sidebar__brand-name {
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar__navigation {
+  display: grid;
+  align-content: start;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.sidebar__group {
+  display: grid;
+  gap: 4px;
+}
+
+.sidebar__group-label {
+  margin: 0 0 4px;
+  padding: 0 10px;
+  color: #98a2b3;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.sidebar__link {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 11px;
+  padding: 0 10px;
+  border-radius: 6px;
+  color: #475467;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.sidebar__link:hover {
+  background: #f2f4f7;
+  color: #101828;
+}
+
+.sidebar__link--active,
+.sidebar__link--active:hover {
+  background: #eaf3ef;
+  color: #174d42;
+  font-weight: 600;
+}
+
+.sidebar__link:focus-visible,
+.sidebar__brand:focus-visible {
+  outline: 3px solid rgb(23 77 66 / 22%);
+  outline-offset: 2px;
+}
+
+.sidebar__account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 14px 6px 2px;
+  border-top: 1px solid #eaecf0;
+}
+
+.sidebar__avatar {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #d0e4dc;
+  border-radius: 50%;
+  background: #edf5f1;
+  color: #174d42;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sidebar__account-copy {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.sidebar__account-copy strong {
+  overflow: hidden;
+  color: #344054;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar__account-copy > span {
+  color: #667085;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.sidebar__mobile-trigger,
+.sidebar__close,
+.sidebar__backdrop {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .sidebar__mobile-trigger {
+    position: fixed;
+    z-index: 41;
+    top: 12px;
+    left: 14px;
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid #e4e7ec;
+    border-radius: 6px;
+    background: #fff;
+    color: #344054;
+    cursor: pointer;
+  }
+
+  .sidebar__mobile-trigger:focus-visible,
+  .sidebar__close:focus-visible {
+    outline: 3px solid rgb(23 77 66 / 22%);
+    outline-offset: 2px;
+  }
+
+  .sidebar__backdrop {
+    position: fixed;
+    z-index: 39;
+    inset: 0;
+    display: block;
+    border: 0;
+    background: rgb(16 24 40 / 38%);
+  }
+
+  .sidebar {
+    position: fixed;
+    z-index: 40;
+    inset: 0 auto 0 0;
+    width: min(280px, calc(100vw - 48px));
+    transform: translateX(-100%);
+    transition: transform 180ms ease;
+  }
+
+  .sidebar-shell--open .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar__close {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 0;
+    border-radius: 5px;
+    background: transparent;
+    color: #667085;
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar__link,
+  .sidebar {
+    transition-duration: 0.01ms;
+  }
+}

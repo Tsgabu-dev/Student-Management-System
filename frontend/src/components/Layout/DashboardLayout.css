@@ -1,0 +1,22 @@
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  min-height: 100vh;
+  background: #f5f7fa;
+  color: #101828;
+  text-align: left;
+}
+
+.dashboard-layout__column {
+  min-width: 0;
+}
+
+.dashboard-layout__main {
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .dashboard-layout {
+    display: block;
+  }
+}

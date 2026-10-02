@@ -1,0 +1,40 @@
+.loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #667085;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.loading--sm {
+  font-size: 12px;
+}
+
+.loading__spinner {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  border: 2px solid #d0d5dd;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: loading-spin 700ms linear infinite;
+}
+
+.loading--sm .loading__spinner {
+  width: 13px;
+  height: 13px;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading__spinner {
+    animation-duration: 1.8s;
+  }
+}
